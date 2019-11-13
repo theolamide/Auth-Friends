@@ -26,9 +26,7 @@ class FriendsList extends React.Component{
 
 
     render(){
-        // console.log(this.state.friends)
         const friends = this.state.friends;
-        // console.log(friends);
         return(
            <div className='CardContainers'>
                 {friends.map(item =>(
