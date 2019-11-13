@@ -25,6 +25,7 @@ export class AddFriendsList extends React.Component  {
             .post('friends', this.state.addNewFriend)
             .then(res => {
                 console.log('this is post a friend', res)
+                window.location = "/friends"
             })
             .catch(err=>console.log(err)); 
     };
