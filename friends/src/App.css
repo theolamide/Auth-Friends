@@ -22,3 +22,15 @@
 .App-link {
   color: #09d3ac;
 }
+
+.IndividualCards{
+  width: 25%;
+  border: 1px solid black;
+  margin: 1rem;
+}
+
+.CardContainers{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}

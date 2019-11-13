@@ -1,7 +1,8 @@
 import React from 'react';
+import {axiosWithAuth} from '../utils/axiosWithAuth';
 
 
-  class Login extends React.Component  {
+  export class Login extends React.Component  {
     state = {
         credentials:{
             username: '',
@@ -15,8 +16,8 @@ import React from 'react';
                 ...this.state.credentials,
                 [e.target.name]: e.target.value
             }
-        })
-    }
+        });
+    };
 
     login = e => {
         e.preventDefault();
@@ -24,7 +25,7 @@ import React from 'react';
             .post('login', this.state.credentials)
             .then(res => {
                 localStorage.setItem('token', res.data.payload);
-                this.props.history.push('/protected');
+                this.props.history.push('/friends');
             })
             .catch(err=>console.log(err));
     };
@@ -34,7 +35,7 @@ import React from 'react';
         return (
             <div className="LoginForm"> 
                 <h2>Login Page</h2>
-                <form className = "row-container">
+                <form className = "row-container" onSubmit={this.login}>
                                         
                     <input 
                         type="text" 
